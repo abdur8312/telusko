@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registeration</title>
+    <style>
+        .margin-below{
+            margin-bottom:15px;
+            margin-top:15px;
+        }
+    </style>
+</head>
+<body>
+    <form action="register" method="post">
+        {% csrf_token %}
+        <label>First Name</label>
+        <div class="margin-below">
+            <input type="text" name="first_name" placeholder="First Name">
+        </div>
+        <label>Last Name</label>
+        <div class="margin-below">
+            <input type="text" name="last_name" placeholder="Last Name">
+        </div>
+        <label>User Name</label>
+        <div class="margin-below">
+            <input type="text" name="username" placeholder="User Name">
+        </div>
+        <label>E-mail</label>
+        <div class="margin-below">
+            <input type="email" name="email" placeholder="E-mail">
+        </div>
+        <label>Password</label>
+        <div class="margin-below">
+            <input type="password" name="password1" placeholder="Password">
+        </div>
+        <label>Confirm Password</label>
+        <div class="margin-below">
+            <input type="password" name="password2" placeholder="Confirm Password">
+        </div>
+        <div class="margin-below">
+            <input type="Submit">
+        </div>
+    </form>
+
+    <div>
+        {% for message in messages %}
+        <h3>{{ message }}</h3>
+        {% endfor %}
+    </div>
+
+
+</body>
+</html>
